@@ -1,0 +1,9 @@
+export function artifact(id:string):string {
+ const steel='<path d="M67 90l9-36 14-14 54 5 13 16-7 38-16 12-54-7z" fill="#3e626a"/><path d="m86 55 49 4-5 35-51-6z" fill="#102c37"/><path d="m91 68 14 2m-16 8 35 4" stroke="#fa9380"/>'
+ const article='<path d="m64 26 103 5-9 87-103-5z" fill="#fafafa"/><path d="m76 47 70 3m-71 10 63 3m-65 7 59 3m-63 7 65 3m-69 7 51 3" stroke="#638491"/><path d="m64 95 87-35" stroke="#6ba77f" stroke-dasharray="3 3"/>'
+ const paper='<path d="m43 43 125-9 8 70-127 11z" fill="#ddd0af"/><path d="m54 53 99-8m-97 20 98-8m-96 17 47-4m8 0 40-3m-94 13 47-4m8 0 40-3m-93 13 47-4" stroke="#695d48"/>'
+ const passport='<path d="m69 29 76 8-9 78-79-9z" fill="#126258"/><path d="m75 37 62 6-7 62-63-6z" fill="none" stroke="#dcc783"/><g fill="none" stroke="#e5d9b4"><circle cx="100" cy="65" r="15"/><ellipse cx="100" cy="65" rx="7" ry="15"/><path d="M86 65h28m-39 23 48 5"/></g>'
+ const planet='<rect x="49" y="28" width="118" height="84" rx="3" fill="#d7e9d2"/><path d="M57 35h101v62H57z" fill="#597c8a"/><path d="m57 62 22-24 30 3 8 14-17 12-10 24-15-6-7-14zm71-24 28 4 1 39-13-1-12-16-12-4z" fill="#93ae74"/><path d="m58 103 88 0" stroke="#4a6559"/>'
+ const shape=({E04:steel,E05:article,E06:paper,E09:passport,E12:planet} as Record<string,string>)[id]||article
+ return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 140" aria-hidden="true"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M10 0H0V10" stroke="#899fac" fill="none" opacity=".15"/></pattern></defs><rect width="220" height="140" fill="#e6edef"/><rect width="220" height="140" fill="url(#grid)"/><g stroke="#375661" stroke-width="1.3" stroke-linejoin="round">'+shape+'</g><text x="9" y="131" fill="#506b78" font-family="monospace" font-size="6">ARCHIVE / '+id.toUpperCase()+'</text></svg>'
+}
